@@ -1,5 +1,7 @@
 # Hunter NODE-BT for Home Assistant
 
+<p align="center"><img src="https://hunterirrigation.au/wp-content/uploads/2022/10/NodeBTvalve.jpg" alt="Hunter NODE-BT controller on a solenoid valve" width="280"><br><sub>Photo: <a href="https://hunterirrigation.au/product/hunter-node-bt-controller/">hunterirrigation.au</a></sub></p>
+
 Control a **Hunter NODE-BT** battery irrigation controller from Home Assistant over Bluetooth. No cloud, no Hunter account, and no extra hub beyond the Bluetooth you already use with Home Assistant.
 
 [![hacs][hacs-badge]][hacs]
