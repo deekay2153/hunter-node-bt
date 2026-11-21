@@ -1,0 +1,13 @@
+{
+  "domain": "hunter_node",
+  "name": "Hunter NODE-BT",
+  "codeowners": ["@deekay2153"],
+  "config_flow": true,
+  "dependencies": ["bluetooth"],
+  "documentation": "https://github.com/deekay2153/hunter-node-bt",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/deekay2153/hunter-node-bt/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

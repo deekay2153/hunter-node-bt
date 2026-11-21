@@ -1,0 +1,69 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hunter NODE-BT",
+        "description": "Pick the Node (it shows the name you gave it in the Hunter app). The PIN is 0 unless you set a passcode in the app. Tick the zones (stations) your Node has wired.",
+        "data": {
+          "address": "Node",
+          "name": "Name",
+          "pin": "PIN",
+          "stations": "Zones"
+        }
+      }
+    },
+    "error": {
+      "no_zones": "Pick at least one zone."
+    },
+    "abort": {
+      "already_configured": "This Node is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Hunter NODE-BT",
+        "description": "Change the PIN or which zones get entities. The Node reloads when you save.",
+        "data": {
+          "pin": "PIN",
+          "stations": "Zones"
+        }
+      }
+    },
+    "error": {
+      "no_zones": "Pick at least one zone."
+    }
+  },
+  "entity": {
+    "switch": {
+      "zone": { "name": "Zone {station}" }
+    },
+    "number": {
+      "run_time": { "name": "Zone {station} run time" }
+    },
+    "sensor": {
+      "time_remaining": { "name": "Zone {station} time remaining" },
+      "battery": { "name": "Battery" },
+      "next_run": { "name": "Next run" },
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Idle",
+          "manual_station": "Manual zone run",
+          "system_off": "Off",
+          "programmable_off": "Days off",
+          "rain_off": "Rain off",
+          "rain_delay": "Rain delay",
+          "soil_off": "Soil sensor off",
+          "program_a_running": "Program A running",
+          "program_b_running": "Program B running",
+          "program_c_running": "Program C running",
+          "manual_run_all": "Manual run all",
+          "manual_program_a": "Manual program A",
+          "manual_program_b": "Manual program B",
+          "manual_program_c": "Manual program C"
+        }
+      }
+    }
+  }
+}
