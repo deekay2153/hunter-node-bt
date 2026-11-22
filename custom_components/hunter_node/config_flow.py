@@ -13,7 +13,7 @@ import homeassistant.helpers.config_validation as cv
 from .const import CONF_PIN, CONF_STATION, CONF_STATIONS, DOMAIN, STATION_CHOICES
 
 NUS_SERVICE = "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
-ZONES = {n: f"Zone {n}" for n in STATION_CHOICES}
+ZONES = {str(n): f"Zone {n}" for n in STATION_CHOICES}  # string keys: the form sends the ticked zones back as strings
 PIN_FIELD = vol.All(vol.Coerce(int), vol.Range(0, 65535))
 
 
@@ -68,7 +68,7 @@ class HunterNodeConfigFlow(ConfigFlow, domain=DOMAIN):
                     vol.Required(CONF_ADDRESS): address_field,
                     vol.Required(CONF_NAME): str,
                     vol.Required(CONF_PIN, default=0): PIN_FIELD,
-                    vol.Required(CONF_STATIONS, default=[1]): cv.multi_select(ZONES),
+                    vol.Required(CONF_STATIONS, default=["1"]): cv.multi_select(ZONES),
                 }
             ),
         )
@@ -97,7 +97,7 @@ class HunterNodeOptionsFlow(OptionsFlow):
             data_schema=vol.Schema(
                 {
                     vol.Required(CONF_PIN, default=entry.data.get(CONF_PIN, 0)): PIN_FIELD,
-                    vol.Required(CONF_STATIONS, default=_current_zones(entry.data)): cv.multi_select(ZONES),
+                    vol.Required(CONF_STATIONS, default=[str(z) for z in _current_zones(entry.data)]): cv.multi_select(ZONES),
                 }
             ),
         )
